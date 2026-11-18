@@ -1,0 +1,228 @@
+
+.add-product-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(27, 35, 54, 0.42);
+  backdrop-filter: blur(4px);
+}
+
+.add-product-modal {
+  width: 100%;
+  max-width: 470px;
+  max-height: 92vh;
+  overflow-y: auto;
+  background: #fff;
+  border: 1px solid #e0e5f0;
+  border-radius: 9px;
+  box-shadow: 0 18px 55px rgba(25, 35, 60, 0.2);
+}
+
+.add-product-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 17px 20px;
+  border-bottom: 1px solid #e7eaf2;
+}
+
+.add-product-modal-header h3 {
+  margin: 0 0 4px;
+  color: #202b42;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.add-product-modal-header p {
+  margin: 0;
+  color: #778198;
+  font-size: 10px;
+}
+
+.add-product-close {
+  border: 0;
+  background: transparent;
+  color: #69748b;
+  font-size: 23px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.add-product-form-body {
+  padding: 18px 20px;
+}
+
+.add-product-fields-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px 12px;
+}
+
+.add-product-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.add-product-field label {
+  color: #38445d;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.add-product-field input,
+.add-product-field select,
+.add-product-field textarea {
+  width: 100%;
+  min-width: 0;
+  padding: 9px 10px;
+  border: 1px solid #d8dfed;
+  border-radius: 5px;
+  outline: none;
+  background: #f0f3ff;
+  color: #34415b;
+  font-family: inherit;
+  font-size: 10px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.add-product-field input,
+.add-product-field select {
+  height: 36px;
+}
+
+.add-product-field textarea {
+  min-height: 72px;
+  resize: vertical;
+}
+
+.add-product-field input:focus,
+.add-product-field select:focus,
+.add-product-field textarea:focus {
+  border-color: #5744e8;
+  box-shadow: 0 0 0 2px rgba(87, 68, 232, 0.1);
+}
+
+.add-product-field input::placeholder,
+.add-product-field textarea::placeholder {
+  color: #929bb0;
+}
+
+.add-product-description {
+  grid-column: 1 / -1;
+}
+
+.add-product-image-field {
+  margin-top: 16px;
+}
+
+.add-product-upload {
+  min-height: 82px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  padding: 10px;
+  border: 1px dashed #b9c4e0;
+  border-radius: 6px;
+  background: #f0f3ff;
+  color: #67748e;
+  font-size: 10px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.add-product-upload:hover {
+  border-color: #5545e7;
+  background: #f5f5ff;
+}
+
+.add-product-upload-icon {
+  color: #5545e7;
+  font-size: 22px;
+}
+
+.add-product-upload small {
+  color: #929bb0;
+  font-size: 9px;
+}
+
+.add-product-upload img {
+  max-width: 100%;
+  max-height: 130px;
+  object-fit: contain;
+}
+
+.add-product-error {
+  margin: 12px 0 0;
+  padding: 9px 11px;
+  border-radius: 5px;
+  background: #fff0f0;
+  color: #c52d38;
+  font-size: 11px;
+}
+
+.add-product-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 9px;
+  padding: 12px 20px;
+  border-top: 1px solid #e7eaf2;
+  background: #f8f9ff;
+}
+
+.add-product-modal-footer button {
+  min-width: 85px;
+  padding: 9px 13px;
+  border-radius: 5px;
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.add-product-cancel {
+  border: 1px solid #cbd2e0;
+  background: #fff;
+  color: #4d5870;
+}
+
+.add-product-submit {
+  border: 1px solid #4433d9;
+  background: #4433d9;
+  color: #fff;
+}
+
+.add-product-submit:hover {
+  background: #3627c4;
+}
+
+.add-product-modal-footer button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media (max-width: 520px) {
+  .add-product-overlay {
+    padding: 12px;
+  }
+
+  .add-product-fields-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .add-product-description {
+    grid-column: auto;
+  }
+
+  .add-product-modal-footer {
+    padding: 12px 15px;
+  }
+}

@@ -1,0 +1,357 @@
+
+/* =========================================
+   TOP CATEGORIES SECTION
+========================================= */
+
+.top-categories {
+  background: var(--bg-primary);
+
+  transition:
+    background-color 0.35s ease,
+    color 0.35s ease;
+}
+
+.home-section-container {
+  width: min(100% - 40px, var(--container-width));
+  margin-inline: auto;
+}
+
+/* =========================================
+   SECTION HEADING
+========================================= */
+
+.home-section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.home-section-heading .section-title {
+  margin-bottom: 4px;
+}
+
+.home-section-heading .section-title,
+.home-section-heading .section-subtitle {
+  transition: color 0.35s ease;
+}
+
+/* =========================================
+   SEE ALL LINK
+========================================= */
+
+.section-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+
+  color: var(--color-link);
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+
+  transition:
+    color 0.3s ease,
+    gap 0.3s ease,
+    transform 0.3s ease;
+}
+
+.section-link-icon {
+  width: 15px;
+  height: 15px;
+
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.section-link:hover {
+  color: var(--color-link-hover);
+  gap: 9px;
+}
+
+.section-link:hover .section-link-icon {
+  transform: translate(2px, -2px);
+}
+
+.section-link:focus-visible {
+  outline: 2px solid var(--color-link);
+  outline-offset: 5px;
+  border-radius: 4px;
+}
+
+/* =========================================
+   CATEGORIES GRID
+========================================= */
+
+.categories-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: 150px 150px;
+  gap: 14px;
+}
+
+/* =========================================
+   CATEGORY CARD
+========================================= */
+
+.category-card {
+  position: relative;
+
+  display: flex;
+  align-items: flex-end;
+
+  min-width: 0;
+  overflow: hidden;
+
+  border-radius: var(--radius-md);
+
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  isolation: isolate;
+  text-decoration: none;
+
+  transform: translateY(0);
+
+  transition:
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.45s ease;
+}
+
+/* Dark gradient overlay */
+
+.category-card::before {
+  content: '';
+
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.02) 10%,
+    rgba(0, 0, 0, 0.25) 48%,
+    rgba(0, 0, 0, 0.82) 100%
+  );
+
+  transition: opacity 0.4s ease;
+}
+
+/* Subtle hover highlight */
+
+.category-card::after {
+  content: '';
+
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.12),
+    transparent 55%
+  );
+
+  opacity: 0;
+
+  transition: opacity 0.4s ease;
+}
+
+/* Hover */
+
+.category-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+.category-card:hover::after {
+  opacity: 1;
+}
+
+/* =========================================
+   CATEGORY POSITIONS
+========================================= */
+
+.category-large {
+  grid-row: 1 / 3;
+}
+
+.category-wide {
+  grid-column: 2 / 4;
+}
+
+/* =========================================
+   CATEGORY CONTENT
+========================================= */
+
+.category-overlay {
+  width: 100%;
+  padding: 16px;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+
+  color: #ffffff;
+}
+
+.category-info h3 {
+  margin: 0 0 4px;
+
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 800;
+
+  transition:
+    transform 0.35s ease,
+    color 0.35s ease;
+}
+
+.category-info p {
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 11px;
+  line-height: 1.5;
+
+  transition: color 0.35s ease;
+}
+
+.category-card:hover .category-info h3 {
+  transform: translateY(-2px);
+}
+
+/* =========================================
+   CATEGORY ARROW
+========================================= */
+
+.category-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.12);
+
+  backdrop-filter: blur(8px);
+
+  opacity: 0;
+  transform: translate(-5px, 5px);
+
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 0.35s ease;
+}
+
+.category-arrow svg {
+  width: 16px;
+  height: 16px;
+}
+
+.category-card:hover .category-arrow {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.category-card:hover .category-arrow {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+.category-card:focus-visible {
+  outline: 3px solid var(--color-link);
+  outline-offset: 4px;
+}
+
+.category-card:active {
+  transform: scale(0.99);
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 650px) {
+  .categories-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 190px 150px 150px;
+  }
+
+  .category-large {
+    grid-column: 1 / 3;
+    grid-row: auto;
+  }
+
+  .category-wide {
+    grid-column: 1 / 3;
+  }
+
+  .category-arrow {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+  .home-section-container {
+    width: min(100% - 28px, var(--container-width));
+  }
+
+  .categories-grid {
+    gap: 10px;
+    grid-template-rows: 180px 135px 135px;
+  }
+
+  .category-overlay {
+    padding: 12px;
+  }
+
+  .category-info h3 {
+    font-size: 14px;
+  }
+
+  .category-info p {
+    font-size: 10px;
+  }
+
+  .category-arrow {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .top-categories *,
+  .top-categories *::before,
+  .top-categories *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+
+  .category-card:hover {
+    transform: none;
+  }
+}

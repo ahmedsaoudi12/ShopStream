@@ -1,0 +1,188 @@
+
+/* =========================================
+   THEME TOGGLE - PREMIUM DESIGN
+========================================= */
+
+.theme-toggle {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+
+  min-height: 38px;
+  padding: 0 13px;
+
+  border: 1px solid var(--border-color);
+  border-radius: 30px;
+
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+
+  white-space: nowrap;
+  cursor: pointer;
+  overflow: hidden;
+
+  transition:
+    background-color 0.35s ease,
+    color 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease,
+    transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* =========================================
+   ICON CONTAINER
+========================================= */
+
+.theme-toggle-icon {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.theme-icon {
+  position: absolute;
+
+  width: 17px;
+  height: 17px;
+
+  stroke-width: 2;
+
+  transition:
+    opacity 0.35s ease,
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    color 0.35s ease;
+}
+
+/* Sun icon */
+
+.sun-icon {
+  color: #e9a23b;
+  opacity: 0;
+  transform: rotate(-90deg) scale(0.4);
+}
+
+.sun-icon.active {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+
+/* Moon icon */
+
+.moon-icon {
+  color: #8b85ed;
+  opacity: 0;
+  transform: rotate(90deg) scale(0.4);
+}
+
+.moon-icon.active {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+
+/* =========================================
+   LABEL
+========================================= */
+
+.theme-toggle-label {
+  transition:
+    color 0.3s ease,
+    opacity 0.3s ease;
+}
+
+/* =========================================
+   HOVER EFFECT
+========================================= */
+
+.theme-toggle:hover {
+  border-color: var(--color-primary);
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+
+  box-shadow: 0 4px 14px rgba(53, 36, 212, 0.09);
+
+  transform: translateY(-2px);
+}
+
+.theme-toggle:hover .theme-icon {
+  filter: brightness(1.05);
+}
+
+/* =========================================
+   ACTIVE / CLICK EFFECT
+========================================= */
+
+.theme-toggle:active {
+  transform: translateY(0) scale(0.96);
+  box-shadow: none;
+}
+
+/* =========================================
+   DARK MODE
+========================================= */
+
+.theme-toggle.dark {
+  background: var(--bg-secondary);
+  border-color: var(--border-color);
+  color: var(--text-primary);
+}
+
+.theme-toggle.dark:hover {
+  background: rgba(139, 133, 237, 0.13);
+  border-color: #8b85ed;
+  color: #c5c0ff;
+  box-shadow: 0 4px 14px rgba(139, 133, 237, 0.12);
+}
+
+/* =========================================
+   LIGHT MODE
+========================================= */
+
+.theme-toggle.light {
+  background: var(--bg-secondary);
+  border-color: var(--border-color);
+  color: var(--text-primary);
+}
+
+.theme-toggle.light:hover {
+  background: var(--color-primary-light);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 4px;
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-toggle,
+  .theme-toggle-label,
+  .theme-icon {
+    transition: none !important;
+  }
+
+  .theme-toggle:hover,
+  .theme-toggle:active {
+    transform: none;
+  }
+}

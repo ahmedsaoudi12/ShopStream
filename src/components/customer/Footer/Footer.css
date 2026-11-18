@@ -1,0 +1,340 @@
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.customer-footer {
+  position: relative;
+  padding: 55px 0 18px;
+  margin-top: 40px;
+
+  background: var(--bg-footer);
+  color: var(--text-primary);
+  border-top: 1px solid var(--border-color);
+
+  transition:
+    background-color 0.35s ease,
+    border-color 0.35s ease,
+    color 0.35s ease;
+}
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.footer-container {
+  width: min(100% - 40px, var(--container-width));
+  margin-inline: auto;
+
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 45px;
+}
+
+/* =========================================
+   BRAND
+========================================= */
+
+.footer-brand {
+  max-width: 330px;
+}
+
+.footer-logo {
+  display: inline-block;
+  margin-bottom: 14px;
+
+  color: var(--color-primary);
+  font-size: 23px;
+  font-weight: 800;
+  letter-spacing: -0.8px;
+  text-decoration: none;
+
+  transition:
+    color 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.footer-logo:hover {
+  opacity: 0.85;
+}
+
+.footer-logo span {
+  color: var(--text-primary);
+  transition: color 0.35s ease;
+}
+
+.footer-description {
+  max-width: 290px;
+  margin-bottom: 20px;
+
+  color: var(--text-secondary);
+  font-size: 12px;
+  line-height: 1.9;
+
+  transition: color 0.35s ease;
+}
+
+/* =========================================
+   SOCIAL ICONS
+========================================= */
+
+.footer-socials {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-socials a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 36px;
+  height: 36px;
+
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+
+  color: var(--text-secondary);
+  background: var(--bg-card);
+
+  font-size: 15px;
+  text-decoration: none;
+
+  transition:
+    color 0.3s ease,
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.3s ease;
+}
+
+.footer-socials a:hover {
+  color: #ffffff;
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+
+  transform: translateY(-4px);
+
+  box-shadow: 0 6px 14px rgba(53, 36, 212, 0.2);
+}
+
+.footer-socials a:active {
+  transform: scale(0.94);
+}
+
+/* =========================================
+   FOOTER COLUMNS
+========================================= */
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.footer-column h4 {
+  position: relative;
+  margin: 0 0 8px;
+  padding-bottom: 10px;
+
+  color: var(--text-primary);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+
+  transition: color 0.35s ease;
+}
+
+.footer-column h4::after {
+  position: absolute;
+  content: '';
+
+  bottom: 0;
+  left: 0;
+
+  width: 25px;
+  height: 2px;
+
+  border-radius: 5px;
+  background: var(--color-primary);
+
+  transition: width 0.35s ease;
+}
+
+.footer-column:hover h4::after {
+  width: 42px;
+}
+
+.footer-column a {
+  position: relative;
+  display: inline-block;
+
+  color: var(--text-secondary);
+  font-size: 11px;
+  line-height: 1.5;
+  text-decoration: none;
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.footer-column a:hover {
+  color: var(--color-primary);
+  transform: translateX(4px);
+}
+
+/* =========================================
+   BOTTOM FOOTER
+========================================= */
+
+.footer-bottom {
+  width: min(100% - 40px, var(--container-width));
+  margin: 42px auto 0;
+  padding-top: 18px;
+
+  border-top: 1px solid var(--border-color);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+
+  transition: border-color 0.35s ease;
+}
+
+.footer-bottom p {
+  margin: 0;
+
+  color: var(--text-muted);
+  font-size: 10px;
+
+  transition: color 0.35s ease;
+}
+
+.footer-bottom-links {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.footer-bottom-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+
+  color: var(--text-secondary);
+  font-size: 10px;
+  text-decoration: none;
+
+  transition:
+    color 0.3s ease,
+    gap 0.3s ease;
+}
+
+.footer-bottom-links a svg {
+  font-size: 12px;
+  transition: transform 0.3s ease;
+}
+
+.footer-bottom-links a:hover {
+  color: var(--color-primary);
+  gap: 7px;
+}
+
+.footer-bottom-links a:hover svg {
+  transform: translate(2px, -2px);
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+  .footer-container {
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 35px;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+    max-width: 420px;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+  .customer-footer {
+    padding-top: 38px;
+  }
+
+  .footer-container {
+    width: min(100% - 32px, var(--container-width));
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 32px 20px;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+
+  .footer-description {
+    max-width: 340px;
+  }
+
+  .footer-bottom {
+    width: min(100% - 32px, var(--container-width));
+    margin-top: 32px;
+
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 13px;
+  }
+}
+
+@media (max-width: 360px) {
+  .footer-container {
+    gap: 28px 12px;
+  }
+
+  .footer-column a {
+    font-size: 10px;
+  }
+
+  .footer-bottom-links {
+    gap: 15px;
+  }
+}
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+.footer-socials a:focus-visible,
+.footer-column a:focus-visible,
+.footer-logo:focus-visible,
+.footer-bottom-links a:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .customer-footer *,
+  .customer-footer *::before,
+  .customer-footer *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+
+  .footer-socials a:hover,
+  .footer-column a:hover {
+    transform: none;
+  }
+}

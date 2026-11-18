@@ -1,0 +1,44 @@
+
+.register-container {
+  max-width: 500px;
+}
+
+.register-container .auth-card {
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+
+.register-container .auth-heading {
+  margin-bottom: 24px;
+}
+
+.register-container .auth-field {
+  margin-bottom: 16px;
+}
+
+.register-terms {
+  align-items: flex-start;
+  line-height: 1.6;
+  margin-top: 20px;
+}
+
+.register-terms input {
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.register-terms a {
+  color: var(--color-link);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.register-terms a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+  .register-container .auth-card {
+    padding: 25px 19px;
+  }
+}

@@ -1,0 +1,64 @@
+
+/* =========================================
+   LIGHT THEME
+========================================= */
+
+[data-theme='light'] {
+  color-scheme: light;
+
+  /* Backgrounds */
+  --bg-primary: #f5f7ff;
+  --bg-secondary: #eef2ff;
+  --bg-card: #ffffff;
+  --bg-footer: #dce6f8;
+  --bg-input: #ffffff;
+  --bg-hero: #eef2ff;
+
+  /* Text */
+  --text-primary: #111827;
+  --text-secondary: #64748b;
+  --text-muted: #94a3b8;
+
+  /* Brand links */
+  --color-link: #3524d4;
+  --color-link-hover: #291bb5;
+
+  /* Borders */
+  --border-color: #e2e8f0;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(30, 41, 59, 0.06);
+  --shadow-md: 0 8px 24px rgba(30, 41, 59, 0.10);
+}
+
+/* =========================================
+   DARK THEME
+========================================= */
+
+[data-theme='dark'] {
+  color-scheme: dark;
+
+  /* Backgrounds */
+  --bg-primary: #11121c;
+  --bg-secondary: #191b2b;
+  --bg-card: #202234;
+  --bg-footer: #191e34;
+  --bg-input: #25283b;
+  --bg-hero: #191b2b;
+
+  /* Text */
+  --text-primary: #f5f6ff;
+  --text-secondary: #b5bbd0;
+  --text-muted: #858da7;
+
+  /* Brand links */
+  --color-link: #aaa3ff;
+  --color-link-hover: #c5c0ff;
+
+  /* Borders */
+  --border-color: #343750;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.18);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
